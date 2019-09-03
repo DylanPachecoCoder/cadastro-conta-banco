@@ -5,16 +5,16 @@ public abstract class Account {
     protected double balance;
     private int agency;
     private int number;
-    private Client holder;
+    private Client client;
     private static int total = 0;
 
-    public Account(int agencia, int numero){
+    public Account(Client client){
         Account.total++;
-        //System.out.println("O total de contas são " + Conta.total);
-        this.agency = agencia;
-        this.number = numero;
+        this.agency = 2222;
+        this.number = Account.total;
         this.balance = 0;
-        //System.out.println("Estou criando uma conta " + this.numero);
+        this.client = client;
+        System.out.println("successfully created account");
     }
 
     public abstract void deposit(double value);
@@ -66,15 +66,21 @@ public abstract class Account {
     }
 
     public void setHolder(Client holder){
-        this.holder = holder;
+        this.client = holder;
     }
 
     public Client getHolder(){
-        return this.holder;
+        return this.client;
     }
 
     public static int getTotal(){
         return Account.total;
+    }
+    
+    public String toString() {
+    	return "Account Number: " + this.number + "\nClient name: " + client.getName() 
+    			+ "\nClient Birthday: " + client.getBirthday()
+    			+"\nAccount Type: " + client.getAccountType();
     }
 
 }

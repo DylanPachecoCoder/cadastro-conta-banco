@@ -1,8 +1,9 @@
 package entities;
 public class SavingsAccount extends Account {
 
-	public SavingsAccount(int agency, int number) {
-		super(agency, number);
+
+	public SavingsAccount(Client client) {
+		super(client);
 	}
 
 	@Override

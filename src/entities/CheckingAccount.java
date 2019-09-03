@@ -1,8 +1,9 @@
 package entities;
 public class CheckingAccount extends Account implements Taxable {
 
-	public CheckingAccount(int agency, int number) {
-		super(agency, number);
+	public CheckingAccount(Client client) {
+		super(client);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
