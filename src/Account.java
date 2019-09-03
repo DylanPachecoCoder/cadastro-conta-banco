@@ -1,15 +1,15 @@
 
 
-public abstract class Conta {
+public abstract class Account {
 
     protected double saldo;
     private int agencia;
     private int numero;
-    private Cliente titular;
+    private Client titular;
     private static int total = 0;
 
-    public Conta(int agencia, int numero){
-        Conta.total++;
+    public Account(int agencia, int numero){
+        Account.total++;
         //System.out.println("O total de contas são " + Conta.total);
         this.agencia = agencia;
         this.numero = numero;
@@ -28,7 +28,7 @@ public abstract class Conta {
         }
     }
 
-    public boolean transfere(double valor, Conta destino) {
+    public boolean transfere(double valor, Account destino) {
         if(this.saca(valor)) {
         		destino.deposita(valor);
         		return true;
@@ -65,16 +65,16 @@ public abstract class Conta {
        this.agencia = agencia;
     }
 
-    public void setTitular(Cliente titular){
+    public void setTitular(Client titular){
         this.titular = titular;
     }
 
-    public Cliente getTitular(){
+    public Client getTitular(){
         return this.titular;
     }
 
     public static int getTotal(){
-        return Conta.total;
+        return Account.total;
     }
 
 }

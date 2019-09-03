@@ -1,5 +1,5 @@
 
-public class CalculadorDeImposto {
+public class TaxCalculator {
 	
 	private double valorImposto;
 	
@@ -7,7 +7,7 @@ public class CalculadorDeImposto {
 		return this.valorImposto;
 	}
 
-	public void calculaImposto(Tributavel tributavel) {
+	public void calculaImposto(Taxable tributavel) {
 		this.valorImposto = tributavel.getValorSalario();
 	}
 	

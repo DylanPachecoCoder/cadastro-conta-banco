@@ -1,7 +1,7 @@
 
-public class ContaCorrente extends Conta implements Tributavel {
+public class CheckingAccount extends Account implements Taxable {
 
-	public ContaCorrente(int agencia, int numero) {
+	public CheckingAccount(int agencia, int numero) {
 		super(agencia, numero);
 	}
 

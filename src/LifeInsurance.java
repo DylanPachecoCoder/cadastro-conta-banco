@@ -1,5 +1,5 @@
 
-public class SeguroDeVida implements Tributavel {
+public class LifeInsurance implements Taxable {
 
 	@Override
 	public double getValorSalario() {

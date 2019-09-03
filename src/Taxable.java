@@ -1,5 +1,5 @@
 
-public interface Tributavel {
+public interface Taxable {
 	
 	public double getValorSalario();
 

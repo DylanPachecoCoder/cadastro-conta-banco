@@ -1,7 +1,7 @@
 
-public class ContaPoupanca extends Conta {
+public class SavingsAccount extends Account {
 
-	public ContaPoupanca(int agencia, int numero) {
+	public SavingsAccount(int agencia, int numero) {
 		super(agencia, numero);
 	}
 
