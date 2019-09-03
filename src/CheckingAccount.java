@@ -1,23 +1,23 @@
 
 public class CheckingAccount extends Account implements Taxable {
 
-	public CheckingAccount(int agencia, int numero) {
-		super(agencia, numero);
+	public CheckingAccount(int agency, int number) {
+		super(agency, number);
 	}
 
 	@Override
-	public boolean saca(double valor) {
-		valor += 0.2;
-		return super.saca(valor);
+	public boolean toWithdraw(double value) {
+		value += 0.2;
+		return super.toWithdraw(value);
 	}
 
 	@Override
-	public void deposita(double valor) {
-		super.balance += valor;
+	public void deposit(double value) {
+		super.balance += value;
 	}
 
 	@Override
-	public double getValorSalario() {
+	public double getSalaryValue() {
 		return 0;
 	}
 	

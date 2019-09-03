@@ -3,12 +3,12 @@ public class TaxCalculator {
 	
 	private double TaxValue;
 	
-	public double getValorImposto() {
+	public double getTaxValue() {
 		return this.TaxValue;
 	}
 
-	public void calculaImposto(Taxable tributavel) {
-		this.TaxValue = tributavel.getValorSalario();
+	public void calculateTax(Taxable taxable) {
+		this.TaxValue = taxable.getSalaryValue();
 	}
 	
 }

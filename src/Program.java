@@ -2,17 +2,17 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		CheckingAccount contaCorrente = new CheckingAccount(111, 111);
-		contaCorrente.deposita(100);
+		CheckingAccount checkingAccount = new CheckingAccount(111, 111);
+		checkingAccount.deposit(100);
 		
-		SavingsAccount contaPoupanca = new SavingsAccount(222, 222);
-		contaPoupanca.deposita(200);
+		SavingsAccount savingsAccount = new SavingsAccount(222, 222);
+		savingsAccount.deposit(200);
 		
-		contaCorrente.transfere(10, contaPoupanca);
+		checkingAccount.transfer(10, savingsAccount);
 		
-		System.out.println("CC: " + contaCorrente.getSaldo());
+		System.out.println("CA: " + checkingAccount.getBalance());
 		
-		System.out.println("CP: " + contaPoupanca.getSaldo());
+		System.out.println("SA: " + savingsAccount.getBalance());
 		
 	}
 	

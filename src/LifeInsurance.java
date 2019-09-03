@@ -2,7 +2,7 @@
 public class LifeInsurance implements Taxable {
 
 	@Override
-	public double getValorSalario() {
+	public double getSalaryValue() {
 		return 0;
 	}
 

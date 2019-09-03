@@ -6,11 +6,11 @@ public class Client {
     private String cpf;
     private String profession;
 
-    public String getNome() {
+    public String getName() {
         return name;
     }
-    public void setNome(String nome) {
-        this.name = nome;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getCpf() {
         return cpf;
@@ -18,11 +18,11 @@ public class Client {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    public String getProfissao() {
+    public String getProfession() {
         return profession;
     }
-    public void setProfissao(String profissao) {
-        this.profession = profissao;
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 
 }

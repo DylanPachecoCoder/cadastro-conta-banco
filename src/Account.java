@@ -17,59 +17,59 @@ public abstract class Account {
         //System.out.println("Estou criando uma conta " + this.numero);
     }
 
-    public abstract void deposita(double valor);
+    public abstract void deposit(double value);
 
-    public boolean saca(double valor) {
-        if(this.balance >= valor) {
-            this.balance -= valor;
+    public boolean toWithdraw(double value) {
+        if(this.balance >= value) {
+            this.balance -= value;
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean transfere(double valor, Account destino) {
-        if(this.saca(valor)) {
-        		destino.deposita(valor);
+    public boolean transfer(double value, Account destiny) {
+        if(this.toWithdraw(value)) {
+        		destiny.deposit(value);
         		return true;
         } else {
         		return false;
         }
     }
 
-    public double getSaldo(){
+    public double getBalance(){
         return this.balance;
     }
 
-    public int getNumero(){
+    public int getNumber(){
         return this.number;
     }
 
-    public void setNumero(int numero){
-        if(numero <= 0) {
+    public void setNumber(int holder){
+        if(holder <= 0) {
             System.out.println("Nao pode valor menor igual a 0");
             return;
         }
-        this.number = numero;
+        this.number = holder;
     }
 
-    public int getAgencia(){
+    public int getAgency(){
         return this.agency;
     }
 
-    public void setAgencia(int agencia){
-       if(agencia <= 0) {
+    public void setAgency(int agency){
+       if(agency <= 0) {
            System.out.println("Nao pode valor menor igual a 0");
            return;
        }
-       this.agency = agencia;
+       this.agency = agency;
     }
 
-    public void setTitular(Client titular){
-        this.holder = titular;
+    public void setHolder(Client holder){
+        this.holder = holder;
     }
 
-    public Client getTitular(){
+    public Client getHolder(){
         return this.holder;
     }
 

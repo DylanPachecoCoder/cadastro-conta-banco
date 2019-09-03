@@ -1,6 +1,6 @@
 
 public interface Taxable {
 	
-	public double getValorSalario();
+	public double getSalaryValue();
 
 }
