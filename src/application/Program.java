@@ -1,3 +1,8 @@
+package application;
+
+import entities.CheckingAccount;
+import entities.SavingsAccount;
+
 public class Program {
 
 	public static void main(String[] args) {
