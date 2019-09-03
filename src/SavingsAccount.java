@@ -7,7 +7,7 @@ public class SavingsAccount extends Account {
 
 	@Override
 	public void deposita(double valor) {
-		super.saldo += valor;
+		super.balance += valor;
 	}
 
 }

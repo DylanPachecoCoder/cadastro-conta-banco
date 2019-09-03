@@ -2,15 +2,15 @@
 
 public class Client {
 
-    private String nome;
+    private String name;
     private String cpf;
-    private String profissao;
+    private String profession;
 
     public String getNome() {
-        return nome;
+        return name;
     }
     public void setNome(String nome) {
-        this.nome = nome;
+        this.name = nome;
     }
     public String getCpf() {
         return cpf;
@@ -19,10 +19,10 @@ public class Client {
         this.cpf = cpf;
     }
     public String getProfissao() {
-        return profissao;
+        return profession;
     }
     public void setProfissao(String profissao) {
-        this.profissao = profissao;
+        this.profession = profissao;
     }
 
 }

@@ -13,7 +13,7 @@ public class CheckingAccount extends Account implements Taxable {
 
 	@Override
 	public void deposita(double valor) {
-		super.saldo += valor;
+		super.balance += valor;
 	}
 
 	@Override

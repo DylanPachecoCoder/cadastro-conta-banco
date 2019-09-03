@@ -2,26 +2,26 @@
 
 public abstract class Account {
 
-    protected double saldo;
-    private int agencia;
-    private int numero;
-    private Client titular;
+    protected double balance;
+    private int agency;
+    private int number;
+    private Client holder;
     private static int total = 0;
 
     public Account(int agencia, int numero){
         Account.total++;
         //System.out.println("O total de contas são " + Conta.total);
-        this.agencia = agencia;
-        this.numero = numero;
-        this.saldo = 0;
+        this.agency = agencia;
+        this.number = numero;
+        this.balance = 0;
         //System.out.println("Estou criando uma conta " + this.numero);
     }
 
     public abstract void deposita(double valor);
 
     public boolean saca(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
+        if(this.balance >= valor) {
+            this.balance -= valor;
             return true;
         } else {
             return false;
@@ -38,11 +38,11 @@ public abstract class Account {
     }
 
     public double getSaldo(){
-        return this.saldo;
+        return this.balance;
     }
 
     public int getNumero(){
-        return this.numero;
+        return this.number;
     }
 
     public void setNumero(int numero){
@@ -50,11 +50,11 @@ public abstract class Account {
             System.out.println("Nao pode valor menor igual a 0");
             return;
         }
-        this.numero = numero;
+        this.number = numero;
     }
 
     public int getAgencia(){
-        return this.agencia;
+        return this.agency;
     }
 
     public void setAgencia(int agencia){
@@ -62,15 +62,15 @@ public abstract class Account {
            System.out.println("Nao pode valor menor igual a 0");
            return;
        }
-       this.agencia = agencia;
+       this.agency = agencia;
     }
 
     public void setTitular(Client titular){
-        this.titular = titular;
+        this.holder = titular;
     }
 
     public Client getTitular(){
-        return this.titular;
+        return this.holder;
     }
 
     public static int getTotal(){
