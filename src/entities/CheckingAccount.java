@@ -1,15 +1,17 @@
 package entities;
+
+import exception.InsufficientFundsException;
+
 public class CheckingAccount extends Account implements Taxable {
 
 	public CheckingAccount(Client client) {
 		super(client);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean toWithdraw(double value) {
+	public void toWithdraw(double value) throws InsufficientFundsException{
 		value += 0.2;
-		return super.toWithdraw(value);
+		super.toWithdraw(value);
 	}
 
 	@Override

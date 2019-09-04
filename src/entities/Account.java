@@ -1,6 +1,8 @@
 package entities;
 
-public abstract class Account {
+import exception.InsufficientFundsException;
+
+public abstract class Account  {
 
     protected double balance;
     private int agency;
@@ -19,22 +21,16 @@ public abstract class Account {
 
     public abstract void deposit(double value);
 
-    public boolean toWithdraw(double value) {
-        if(this.balance >= value) {
-            this.balance -= value;
-            return true;
-        } else {
-            return false;
-        }
+    public void toWithdraw(double value) throws InsufficientFundsException{
+        if(this.balance < value) {
+            throw new InsufficientFundsException("Insufficient Funds ! \nBalance: " + this.balance + "cash withdrawal: " + value);
+        } 
+        this.balance -= value;
     }
 
-    public boolean transfer(double value, Account destiny) {
-        if(this.toWithdraw(value)) {
-        		destiny.deposit(value);
-        		return true;
-        } else {
-        		return false;
-        }
+    public void transfer(double value, Account destiny) throws InsufficientFundsException{
+    	this.toWithdraw(value);
+        destiny.deposit(value);
     }
 
     public double getBalance(){
