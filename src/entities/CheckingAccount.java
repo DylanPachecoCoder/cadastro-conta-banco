@@ -4,8 +4,8 @@ import exception.InsufficientFundsException;
 
 public class CheckingAccount extends Account implements Taxable {
 
-	public CheckingAccount(Client client) {
-		super(client);
+	public CheckingAccount(Client client, String password) {
+		super(client, password);
 	}
 
 	@Override

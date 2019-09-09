@@ -12,8 +12,10 @@ public class Client {
     private String profession;
     private Date birthday;
     private String accountType;
-
     
+    public Client(String name) {
+    	this.name = name;
+    }
     
 	public Client(String name, String cpf, String profession, Date birthday, String accountType) {
 		this.name = name;
@@ -23,7 +25,6 @@ public class Client {
 		this.accountType = accountType;
 	}
 
-	
 	public String getAccountType() {
 		return accountType;
 	}
@@ -43,7 +44,7 @@ public class Client {
 	}
 
 	public String getName() {
-        return name;
+        return this.name;
     }
     public void setName(String name) {
         this.name = name;

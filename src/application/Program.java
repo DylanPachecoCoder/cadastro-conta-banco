@@ -22,6 +22,7 @@ public class Program {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		List<Account> accounts = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
+		String password;
 		
 		int option;
 		boolean flag = true;
@@ -45,6 +46,24 @@ public class Program {
 		
 				case 1: {
 					UI.clearScreen();
+					for(int i = 0; i<3; i++) {
+						System.out.println("Enter your name: ");
+						sc.nextLine();
+						String name = sc.nextLine();
+						System.out.println("Enter your password: ");
+						password = sc.nextLine();
+						System.out.println(" pass: "+password);
+						Client client = new Client(name);
+						Account account = new CheckingAccount(client, password);
+						
+						if(accounts.contains(account)) {
+							System.out.println("Login realizado com sucesso");
+						}else {
+							System.out.println("Nome e/ou senha inválido");
+						}
+						
+					}
+					System.out.println("");
 					break;
 				}case 2:{
 					UI.clearScreen();
@@ -61,6 +80,9 @@ public class Program {
 					System.out.println("Enter your profession: ");
 					sc.nextLine();
 					String profession = sc.nextLine();
+					System.out.println("Enter your password: ");
+					password = sc.nextLine();
+					System.out.println(" pass: " + password);
 
 					System.out.println();
 					System.out.println("1 - Checking Account");
@@ -73,7 +95,7 @@ public class Program {
 						case 1:{
 							UI.clearScreen();
 							Client client = new Client(name, cpf, profession, date, "Checking Account");
-							CheckingAccount checkingAccount = new CheckingAccount(client);
+							Account checkingAccount = new CheckingAccount(client, password);
 							System.out.println(checkingAccount);
 							accounts.add(checkingAccount);
 							System.in.read();
@@ -81,7 +103,7 @@ public class Program {
 						}case 2:{
 							UI.clearScreen();
 							Client client = new Client(name, cpf, profession, date, "Savings Account");
-							SavingsAccount savingsAccount = new SavingsAccount(client);
+							Account savingsAccount = new SavingsAccount(client, password);
 							System.out.println(savingsAccount);
 							accounts.add(savingsAccount);
 							System.in.read();
@@ -113,7 +135,6 @@ public class Program {
 		} while (flag);
 		sc.close();
 	
-		
 	}
 
 }

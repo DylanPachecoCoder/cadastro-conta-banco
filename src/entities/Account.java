@@ -8,14 +8,17 @@ public abstract class Account  {
     private int agency;
     private int number;
     private Client client;
+    private String password;
     private static int total = 0;
 
-    public Account(Client client){
+    public Account(Client client, String password){
         Account.total++;
         this.agency = 2222;
         this.number = Account.total;
         this.balance = 0;
         this.client = client;
+        this.password = password;
+        
         System.out.println("successfully created account");
     }
 
@@ -33,6 +36,14 @@ public abstract class Account  {
         destiny.deposit(value);
     }
 
+    public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String senha) {
+		this.password = senha;
+	}
+    
     public double getBalance(){
         return this.balance;
     }
@@ -71,6 +82,23 @@ public abstract class Account  {
 
     public static int getTotal(){
         return Account.total;
+    }
+    
+    @Override
+    public boolean equals(Object object) {
+    	Account account = (Account) object;
+
+    	if(this.client.getName().trim() != account.client.getName().trim()) {
+        	System.out.println(this.client.getName().trim() + " vs " + account.client.getName().trim());
+      
+    		return false;
+    	}
+    	
+    	if(this.getPassword() != account.getPassword()) {
+    	  	System.out.println(this.getPassword() + " vs "+ account.getPassword());
+    		return false;
+    	}
+    	return true;
     }
     
     public String toString() {

@@ -2,8 +2,8 @@ package entities;
 public class SavingsAccount extends Account {
 
 
-	public SavingsAccount(Client client) {
-		super(client);
+	public SavingsAccount(Client client, String password) {
+		super(client, password);
 	}
 
 	@Override
