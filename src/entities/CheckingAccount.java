@@ -1,6 +1,7 @@
 package entities;
 
 import exception.InsufficientFundsException;
+import interfaces.Account;
 
 public class CheckingAccount extends Account implements Taxable {
 

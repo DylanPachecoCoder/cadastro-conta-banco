@@ -44,7 +44,7 @@ public class Client {
 	}
 
 	public String getName() {
-        return this.name;
+        return this.name.toString();
     }
     public void setName(String name) {
         this.name = name;

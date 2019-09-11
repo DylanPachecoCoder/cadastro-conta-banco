@@ -1,8 +1,9 @@
-package entities;
+package interfaces;
 
+import entities.Client;
 import exception.InsufficientFundsException;
 
-public abstract class Account  {
+public abstract class Account implements Comparable<Account> {
 
     protected double balance;
     private int agency;
@@ -19,7 +20,6 @@ public abstract class Account  {
         this.client = client;
         this.password = password;
         
-        System.out.println("successfully created account");
     }
 
     public abstract void deposit(double value);
@@ -35,8 +35,16 @@ public abstract class Account  {
     	this.toWithdraw(value);
         destiny.deposit(value);
     }
+    
+    public Client getClient() {
+		return client;
+	}
 
-    public String getPassword() {
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public String getPassword() {
 		return this.password;
 	}
 
@@ -85,26 +93,30 @@ public abstract class Account  {
     }
     
     @Override
-    public boolean equals(Object object) {
+    public boolean equals (Object object) {
     	Account account = (Account) object;
-
-    	if(this.client.getName().trim() != account.client.getName().trim()) {
-        	System.out.println(this.client.getName().trim() + " vs " + account.client.getName().trim());
-      
+    	
+    	
+    	if(!this.client.getName().equals(account.client.getName())) {
+    		return false;
+    	} 
+    	
+    	if(!this.getPassword().equals(account.getPassword())) {
     		return false;
     	}
     	
-    	if(this.getPassword() != account.getPassword()) {
-    	  	System.out.println(this.getPassword() + " vs "+ account.getPassword());
-    		return false;
-    	}
     	return true;
     }
     
-    public String toString() {
-    	return "Account Number: " + this.number + "\nClient name: " + client.getName() 
-    			+ "\nClient Birthday: " + client.getBirthday()
-    			+"\nAccount Type: " + client.getAccountType();
+    @Override
+    public int compareTo(Account account) {
+    	return this.getClient().getName().compareTo(account.getClient().getName());
     }
+    
+//    public String toString() {
+//    	return "Account Number: " + this.number + "\nClient name: " + client.getName() 
+//    			+ "\nClient Birthday: " + client.getBirthday()
+//    			+"\nAccount Type: " + client.getAccountType();
+//    }
 
 }

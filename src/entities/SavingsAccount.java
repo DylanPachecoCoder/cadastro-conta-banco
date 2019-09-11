@@ -1,4 +1,7 @@
 package entities;
+
+import interfaces.Account;
+
 public class SavingsAccount extends Account {
 
 

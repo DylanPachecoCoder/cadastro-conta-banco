@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Account;
 import entities.CheckingAccount;
 import entities.Client;
 import entities.SavingsAccount;
+import interfaces.Account;
 
 public class Program {
 
@@ -55,8 +55,9 @@ public class Program {
 						System.out.println(" pass: "+password);
 						Client client = new Client(name);
 						Account account = new CheckingAccount(client, password);
-						
+					
 						if(accounts.contains(account)) {
+							
 							System.out.println("Login realizado com sucesso");
 						}else {
 							System.out.println("Nome e/ou senha inválido");
